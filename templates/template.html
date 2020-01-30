@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Verbum Dicso{% endblock %}
+
+{% block navbar %}
+
+<nav class=".nav"><font size="4">
+    <ul class="nav nav-pills"> 
+        <li role="presentation"><a href="{{ url_for('index') }}">Home</a></li>
+        <li role="presentation"><a href="{{ url_for('how_to') }}">See HOW-TO</a></li>
+        <li role="presentation"><a href="{{ url_for('game_web') }}">Verbum Disco game</a></li>
+      </ul></font>
+</nav>
+
+{% endblock %}

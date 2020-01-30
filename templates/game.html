@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 30%;
+      padding: 50px;
+    }
+    
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    
+    
+    
+    <div class="w3-card-2"> 
+        <div class="column" >
+        <h3>Verbum Disco Game</h3>
+        <font size="4"> <p>
+            <ul>
+                    <li> <a href="{{ url_for('upload') }}">Upload the file</a> </li>
+                    <li> <a href="{{ url_for('play') }}">PLAY Verbum Disco</a> </li>
+            </ul>
+            </p </font>
+        </div>
+      </div>
+
+
+{% endblock %}

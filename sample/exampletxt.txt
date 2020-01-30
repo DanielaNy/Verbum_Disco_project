@@ -1,0 +1,12 @@
+test; test
+example; priklad
+how; ako
+to send; poslat
+data; data
+and; a
+be; byt
+able; schopny
+to play; hrat
+the game; hra
+
+goodbye; dovidenia
