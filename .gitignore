@@ -1,9 +1,7 @@
-obrazek.ps
-04/poznamky.txt
+
 *.tmp
 */venv/*
+*venv/*
 .vscode/*
-test.py
-/12*
 */token.txt
-*/fp_others
+*/fp_others/*
