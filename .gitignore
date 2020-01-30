@@ -1,7 +1,6 @@
 
 *.tmp
-*/venv/*
 *venv/*
 .vscode/*
-*/token.txt
-*/fp_others/*
+*token.txt
+*fp_others/*
