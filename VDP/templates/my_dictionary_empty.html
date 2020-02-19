@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+
+    <body>
+    
+    <h3>Your dictionary</h3> <br>
+    <p>The dictionary is yet empty.</p>
+
+    <br><br><br>
+<div>
+        <h4>What do you want to do now?</h4>     <br>     
+        <li><a href="{{ url_for('play') }}">PLAY!</a><br>
+        <li><a href="{{ url_for('upload') }}">Upload other words</a> and PLAY!<br>
+        <li><a href="{{ url_for('end') }}">End the game</a> (this will remove the uploaded words)<br>
+         </p> 
+</div>
+<br><br>
+{% endblock %}
