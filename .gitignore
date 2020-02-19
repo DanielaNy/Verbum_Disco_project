@@ -7,3 +7,4 @@
 .pytest_cache/
 
 *auxiliary_files/*
+*user/*
