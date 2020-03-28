@@ -3,8 +3,10 @@
 .vscode/*
 
 *.pyc
+*/__pycache__/*
 *__pycache__/*
 .pytest_cache/
 
 *auxiliary_files/*
 *user/*
+*db.sqlite3

@@ -1,0 +1,60 @@
+dorucak; ranajky
+rucak; obed
+vecera; vecera
+luk; cibula
+cesnjak; cesnak
+papar; korenie
+spinat; spenat
+grah; fazula
+grasak; hrasok
+spinat; spenat
+leca; sosovica
+brasno; muka
+orasi; orechy
+krastavci; uhorky
+saran; kopor
+lovorov list; bobkovy list
+oblatne; oplatky
+jelo; jedlo
+sastojnici; ingrediencie
+ljuckasto; trosku
+temeljca; vyvar
+komade; diel
+lonac; hrniec
+posud; misa
+izbockajte; popichajte
+kifle; rozok
+perece; praclik
+krafne; siska
+slanac; slany rozok
+buchtla; buchta
+odrezak; reze
+pohano meso; vzprazane maso
+pohani sir; vyprayany syr
+tikva; tekvica
+tikvica; cuketa
+umak; omacka
+glive; hryby
+kim; kmin
+persin; petrzlen
+stamplica; stamperlik
+pahuljice; cerealie
+mahune; zelena fazulka
+cvjetaca; karfiol
+chrenovke; parky
+saviaca; strudla
+koraba; kalerab
+rotkvica; redkvicka
+krusne mrvice; prezle
+prstohvat; stipka
+debrecinke; spekacky
+tava; panvica
+kajgana; prazenica
+sladkisi; sladkosti
+zvakaca guma; zuvacka
+sok; stava
+grickalica; obcerstvenie
+kokice; pukance
+grickalica; slana pochutka
+
+

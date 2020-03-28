@@ -8,15 +8,16 @@ from sqlalchemy.exc import IntegrityError, OperationalError
 from VDP import app, APP_ROOT, db, logger
 import VDP.models
 from VDP.config_file import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
-from VDP.config_file import db_name, file_txt, user_destination, file_in_user_destination, no_of_selected
+from VDP.config_file import db_name, file_txt, sample_txt, no_of_selected, project_dir
+from VDP.config_file import user_destination, file_in_user_destination
+from VDP.config_file import sample_destination, file_in_sample_destination
 
 chosen_list = []
-# levels = [0, 1, 2, 0, 0, 1, 0, 0, 0, 1]
 
 
 def save_uploaded_file():
     """saves the uploaded file by user into 'user' directory"""
-    logger.warn(f"""LOGGER WARN / file will be saved in: 
+    logger.warn(f"""LOGGER WARN / file will be saved in:
         {user_destination}""")       # to check
     if not os.path.isdir(user_destination):
         os.mkdir(user_destination)
@@ -27,7 +28,7 @@ def save_uploaded_file():
         file.save(file_in_user_destination)
 
 
-def _add(db):
+def _add(db, user_file):
     for line in user_file:
         line = line.rstrip()
         uploaded_words_from_one_line = line.split("; ")    # list
@@ -68,25 +69,29 @@ def new_words_from_text_file():
     """appends new words from the text file to the database,
     if user_textfile.txt uploaded"""
     db.create_all()
+    print(file_in_user_destination)
+    print(file_in_sample_destination)
 
     if os.path.exists(file_in_user_destination):
         logger.warn(
                 f"""LOGGER WARN / exists----------------------------:""")
         with open(file_in_user_destination) as user_file:
-            user_file = _add(db)
+            user_file = _add(db, user_file)
         os.remove(file_in_user_destination)
-    else:
-        pass
+
     if len(VDP.models.Word.query.all()) < no_of_selected:
-        with open("./sample/exampletxt.txt") as user_file:
+        with open(file_in_sample_destination) as user_file:
             logger.warn(
                 f"""LOGGER WARN / words added from sample:""")  # to check
-            user_file = _add(db)
+            user_file = _add(db, user_file)
     else:
         logger.warn(
             f"""LOGGER WARN / No other words added to the
             \'VDP.models.Word\' table.
             """)  # to check
+    print(user_file)
+
+    return user_file
 
 
 def show_all_words_from_database():
@@ -95,12 +100,11 @@ def show_all_words_from_database():
         all_words = VDP.models.Word.query.all()
         for w in all_words:
             all_words_list.append((w.unknown, w.known, w.level))
-        logger.warn(
+    except OperationalError:
+        pass
+    logger.warn(
             f"""LOGGER WARN / All words in the database:
             {all_words_list}""")  # to check
-    except OperationalError:
-        return None
-
     return all_words_list
 
 
@@ -147,4 +151,3 @@ def end_game():
     """deletes the database"""
     os.remove(APP_ROOT + '/' + db_name)     # to be removed in ver. 2
     logger.warn(f"""LOGGER WARN / removed: {db_name}""")  # to check
-
