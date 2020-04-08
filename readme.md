@@ -2,7 +2,7 @@
 
 Verbum Disco is a learning game, which helps you to build up a vocabulary in a foreign language.
 
-:egg: :snake: *This project is a beginer's Python project.*
+:egg: :snake: *This is a beginer's Python project.*
 
 
 ## Technologies: 
@@ -17,7 +17,7 @@ Verbum Disco is a learning game, which helps you to build up a vocabulary in a f
 in progress
 
 
-**Dependencies**
+## Dependencies
 - Python 3.6.x
 - WTForms 2.2.1
 - Flask 1.1.1
