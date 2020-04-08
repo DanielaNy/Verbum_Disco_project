@@ -1,8 +1,10 @@
-from VDP import app, APP_ROOT, bootstrap, db, logger
+from VDP import app, bootstrap, db, logger
 from VDP import models, game
+from VDP.config_file import APP_ROOT
 import os
 from random import choice
 from flask import render_template, request, redirect, url_for
+import importlib
 
 
 @app.route("/")
@@ -57,8 +59,15 @@ def upload_complete():
 def play():
     chosen_list = game.prepare_game()
     chosen_word_ids = ','.join(str(word[2]) for word in chosen_list)
-    from VDP.forms import TranslationForm
-    form = TranslationForm(word_ids=chosen_word_ids)
+    logger.warn(f"""LOGGER WARN / chosen_word_ids:
+        {chosen_word_ids}""")  # to check
+    import VDP.forms
+    importlib.reload(VDP.forms)
+    form = VDP.forms.TranslationForm(word_ids=chosen_word_ids)
+    logger.warn(f"""LOGGER WARN / form:
+        {form}""")  # to check
+    logger.warn(f"""LOGGER WARN / word1:
+        {VDP.forms.TranslationForm.word1}""")  # to check
     return render_template("play.html", chosen_list=chosen_list, form=form)
 
 
@@ -71,10 +80,13 @@ def result():
         request.form["word3"],
         request.form["word4"],
         request.form["word5"]]
-    # for later comparing word and input in form 
+    # for subsequent comparing word and input in form
     word_ids = request.form["word_ids"].split(",")
-    # chosen list plus input from form and evaluation, if the input matches chosen word:
+
+    # chosen list plus input from form and evaluation,
+    # if the input matches chosen word:
     final_list_comparison = game.evaluate_game(form_words, word_ids)
+
     # if match, points assigned
     for word_set in final_list_comparison:
         if word_set[3]:

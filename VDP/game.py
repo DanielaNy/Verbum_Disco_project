@@ -5,12 +5,16 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError, OperationalError
 
-from VDP import app, APP_ROOT, db, logger
+from VDP import app, db, logger
 import VDP.models
-from VDP.config_file import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
-from VDP.config_file import db_name, file_txt, sample_txt, no_of_selected, project_dir
-from VDP.config_file import user_destination, file_in_user_destination
-from VDP.config_file import sample_destination, file_in_sample_destination
+
+from VDP.config_file import (
+    APP_ROOT,
+    SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS,
+    db_name, file_txt, sample_txt, no_of_selected, project_dir,
+    user_destination, file_in_user_destination,
+    sample_destination, file_in_sample_destination)
+
 
 chosen_list = []
 
@@ -69,8 +73,6 @@ def new_words_from_text_file():
     """appends new words from the text file to the database,
     if user_textfile.txt uploaded"""
     db.create_all()
-    print(file_in_user_destination)
-    print(file_in_sample_destination)
 
     if os.path.exists(file_in_user_destination):
         logger.warn(
@@ -89,9 +91,6 @@ def new_words_from_text_file():
             f"""LOGGER WARN / No other words added to the
             \'VDP.models.Word\' table.
             """)  # to check
-    print(user_file)
-
-    return user_file
 
 
 def show_all_words_from_database():
@@ -149,5 +148,5 @@ def evaluate_game(form_words, word_ids):
 
 def end_game():
     """deletes the database"""
-    os.remove(APP_ROOT + '/' + db_name)     # to be removed in ver. 2
-    logger.warn(f"""LOGGER WARN / removed: {db_name}""")  # to check
+    os.remove(project_dir + '/' + db_name)     # to be removed in ver. 2
+    logger.warn(f"""LOGGER WARN / removed: {db_name}""")    # to check
