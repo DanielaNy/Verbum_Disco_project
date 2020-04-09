@@ -4,6 +4,7 @@ Verbum Disco is a learning game, which helps you to build up a vocabulary in a f
 
 :egg: :snake: *This is a beginer's Python project.*
 
+https://github.com/DanielaNy/Verbum_Disco_project/blob/work_in_progress/static/images/exampletxt.png
 
 ## Technologies: 
 - Python 3.6
@@ -27,7 +28,6 @@ in progress
 - Flask_Bootstrap 3.3.7.1
 
 
-
 ## Launch
 The Verbum Disco game can be launched as web page on localhost (http://localhost:5000), after downloading the project, installing dependencies (requirements.txt) and running 'run.py' in Python.
 
@@ -37,9 +37,10 @@ A text file (.txt) containing words and their translations in a specific format 
 ## Versions:
  v1 - initial version (in progress)
 
+
  ## Acknowledgment
  <https://pyladies.cz/brno/>
 
 
  ## License
- [MIT](https://choosealicense.com/licenses/mit/)
+ [MIT license](https://choosealicense.com/licenses/mit/)

@@ -14,11 +14,12 @@ file_in_sample_destination = "/".join([sample_destination, sample_txt])
 # levels = [0, 1, 2, 0, 0, 1, 0, 0, 0, 1]
 
 
-# configuration of the Flask app
-configuration = 'dev'        # 'dev' or 'prod'
+# configuration of the Flask app 'dev' or 'prod'
+# configuration = 'prod'
+configuration = 'dev'
 
 
-def configure_app(configuration='prod'):
+def configure_app(configuration):
     """configures flask app; default for production 'prod',
     if for development, set configuration to 'dev' above"""
     DEBUG = True
