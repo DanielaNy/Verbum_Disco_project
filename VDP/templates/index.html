@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 50px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+
+
+<div class="w3-card-2"> 
+    <div class="column" >
+            <h3>Verbum Disco game</h3><br>
+       <h4>Hello world :)</h4>
+      <p><font size="4"> 
+        This is a web page app '<a href="https://translate.google.com/#view=home&op=translate&sl=la&tl=en&text=verbum%20disco" target="_blank" title="Google translator">Verbum Disco</a>', which may help you to learn new vocabulary.
+        <br>The app is based on a 
+        <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" title="Wikipedia">Python</a> 
+        programming language and 
+        <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank" title="Wikipedia">Flask</a> web framework.
+        <br>
+        <br>
+        For what you want to do, choose from the navigation bar above.
+    </font></p>
+    </div>
+    <div class="column" >
+        <p>
+      <img src="/static/images/index/{{ random_image }}" width="90%" height="80%" style="border:3px solid green">
+    </p>
+    </div>
+  </div>
+  </div>
+
+{% endblock %}
+

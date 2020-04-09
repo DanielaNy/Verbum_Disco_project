@@ -1,0 +1,48 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<head>
+    <style>
+    table {
+      border-collapse: collapse;
+      width: 40%;
+    }
+    
+    th, td {
+      padding: 5px 8px 1px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color:#f5f5f5;}
+    </style>
+    </head>
+    <body>
+    
+    <h3>Your dictionary</h3> <br>
+    
+    <table>
+      <tr>
+        <th>Words to translate</th>
+        <th>Original translation</th>
+      </tr>
+      {% for word in all_words_list %}
+      <tr>
+          <td> {{ word[0] }} </td>
+          <td> {{ word[1] }} </td>
+      </tr>
+      {% endfor %}
+     
+    </table>
+
+    <br><br><br>
+<div>
+        <h4>What do you want to do now?</h4>     <br>     
+        <li><a href="{{ url_for('play') }}">PLAY!</a><br>
+        <li><a href="{{ url_for('upload') }}">Upload other words</a> and PLAY!<br>
+        <li><a href="{{ url_for('end') }}">End the game</a> (this will remove the uploaded words)<br>
+         </p> 
+</div>
+<br><br>
+{% endblock %}

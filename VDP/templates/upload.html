@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 30%;
+      padding: 50px;
+    }
+    
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    
+    
+    
+    <div class="w3-card-2"> 
+        <div class="column" >
+                <h3>Upload the text file:</h3><br>
+          <p><font size="4">     
+            <form id="upload-form" action="{{ url_for('upload_complete') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".txt" multiple>
+                <input type="submit" value="send">
+            </form>
+        </font></p>
+        </div>
+      </div>
+      </div>
+
+{% endblock %}
+    

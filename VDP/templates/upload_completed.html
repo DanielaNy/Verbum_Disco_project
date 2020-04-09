@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 30%;
+      padding: 50px;
+    }
+    
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    
+    
+    
+    <div class="w3-card-2"> 
+        <div class="column" >
+                <h3>Upload completed.</h3><br>
+          <p><font size="4">  
+                Now, you can start the game here: <a href="{{ url_for('play') }}">PLAY</a>
+        </font></p>
+        </div>
+      </div>
+      </div>
+
+{% endblock %}
