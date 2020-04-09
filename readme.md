@@ -4,7 +4,7 @@ Verbum Disco is a learning game, which helps you to build up a vocabulary in a f
 
 :egg: :snake: *This is a beginer's Python project.*
 
-![Screenshot](https://github.com/DanielaNy/Verbum_Disco_project/blob/work_in_progress/static/images/VDP_screenshot1.png "Verbum Disco Screenshot")
+![Screenshot](https://github.com/DanielaNy/Verbum_Disco_project/blob/work_in_progress/static/images/Screenshot2.png "Verbum Disco Screenshot")
 
 ## Technologies: 
 - Python 3.6
